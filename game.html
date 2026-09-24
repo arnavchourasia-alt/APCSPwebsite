@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>really cool awesome game</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="icon" href="https://codehs.com/uploads/dc996631e2b43cbd3057f59597e54802" type="image/x-icon">
+
+    <style>
+
+       
+        .navbar-brand {
+            font-size: 26px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .navbar-brand:hover {
+            color: #ff007f !important;
+            text-shadow: 0 0 5px #ff007f,
+                         0 0 15px #ff007f,
+                         0 0 30px #ff007f;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: courier;
+        }
+
+        .game-intro {
+            text-align: center;
+            font-size: 30px;
+            margin: 10px auto 30px auto;
+            max-width: 1000px;
+        }
+
+        #gameBox {
+            width: 400px;
+            height: 250px;
+            background-color: red;
+            margin: 40px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            cursor: pointer;
+
+            box-shadow: 0 0 5px #ff007f,
+                        0 0 20px #ff007f,
+                        0 0 40px #ff007f;
+        }
+
+        /* Rating section */
+
+        .rating-section {
+            background-color: black;
+            text-align: center;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .rating-section p {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .rating {
+            display: inline-block;
+        }
+
+        .rating:not(:checked) > input {
+            position: absolute;
+            appearance: none;
+        }
+
+        .rating:not(:checked) > label {
+            float: right;
+            cursor: pointer;
+            font-size: 40px;
+            color: #666;
+            margin: 0 3px;
+        }
+
+        .rating:not(:checked) > label:before {
+            content: '★';
+        }
+
+        .rating > input:checked + label:hover,
+        .rating > input:checked + label:hover ~ label,
+        .rating > input:checked ~ label:hover,
+        .rating > input:checked ~ label:hover ~ label,
+        .rating > label:hover ~ input:checked ~ label {
+            color: #e58e09;
+        }
+
+        .rating:not(:checked) > label:hover,
+        .rating:not(:checked) > label:hover ~ label {
+            color: #ff9e0b;
+        }
+
+        .rating > input:checked ~ label {
+            color: #ffa723;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="index.html">Arnav's Webpage</a>
+
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+
+            <ul class="nav navbar-nav">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="bio.html">Bio</a>
+                </li>
+
+                <li>
+                    <a href="projects.html">Projects</a>
+                </li>
+
+                <li class="active">
+                    <a href="game.html">Game</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<h1>Reaction Time Test</h1>
+
+<p class="game-intro">
+    Test your reaction time by clicking the box as soon as it turns green!
+</p>
+
+<p id="message">Click the box to start</p>
+
+<p id="bestTime">Best time: -- ms</p>
+
+<div id="gameBox">CLICK ME</div>
+
+
+<footer class="bg-dark text-white text-center py-4 mt-5">
+
+    <div class="container">
+
+        <p class="mb-2">
+            Created by <strong>Arnav Chourasia</strong> &copy; 2026
+        </p>
+
+        <p class="mb-2">
+            <a href="https://granadahigh.com/"
+               target="_blank"
+               class="text-white text-decoration-none">
+                Granada High School
+            </a>
+        </p>
+
+        <p class="mb-0">
+            <a href="mailto:arnav.chourasia@gmail.com"
+               class="text-white text-decoration-none">
+                arnav.chourasia@gmail.com
+            </a>
+        </p>
+
+    </div>
+
+
+    <!-- Website rating -->
+
+    <div class="rating-section">
+
+        <p>What would you rate this website?</p>
+
+        <div class="rating">
+
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5" onclick="thankYou()"></label>
+
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4" onclick="thankYou()"></label>
+
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3" onclick="thankYou()"></label>
+
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2" onclick="thankYou()"></label>
+
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1" onclick="thankYou()"></label>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+function thankYou() {
+    alert("Thanks for your feedback!");
+}
+
+</script>
+
+
+<script>
+
+let box = document.getElementById("gameBox");
+let message = document.getElementById("message");
+
+let startTime;
+let ready = false;
+let waiting = false;
+let bestTime = null;
+
+box.onclick = function() {
+
+    if (waiting == false && ready == false) {
+
+        waiting = true;
+
+        box.style.backgroundColor = "red";
+        box.innerHTML = "WAIT...";
+        message.innerHTML = "Wait for green...";
+
+        let randomTime = Math.random() * 3000 + 2000;
+
+        setTimeout(function() {
+
+            box.style.backgroundColor = "lime";
+            box.innerHTML = "CLICK!";
+            message.innerHTML = "CLICK!";
+
+            startTime = Date.now();
+
+            waiting = false;
+            ready = true;
+
+        }, randomTime);
+    }
+
+    else if (ready == true) {
+
+        let reactionTime = Date.now() - startTime;
+
+        message.innerHTML = "Your reaction time: " + reactionTime + " ms";
+
+        if (bestTime == null || reactionTime < bestTime) {
+            bestTime = reactionTime;
+            document.getElementById("bestTime").innerHTML = "Best time: " + bestTime + " ms";
+        }
+
+        box.style.backgroundColor = "red";
+        box.innerHTML = "CLICK ME";
+
+        ready = false;
+    }
+};
+
+</script>
+
+
+<script src="cursor.js"></script>
+
+</body>
+</html>
+
