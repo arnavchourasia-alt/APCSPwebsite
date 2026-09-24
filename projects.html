@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AP CSP PROJECT PAGE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="https://codehs.com/uploads/dc996631e2b43cbd3057f59597e54802" type="image/x-icon">
+
+  <style>
+    .navbar-brand {
+      font-size: 26px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .navbar-brand:hover {
+      color: #ff007f !important;
+      text-shadow: 0 0 5px #ff007f,
+                   0 0 15px #ff007f,
+                   0 0 30px #ff007f;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .project-intro {
+      text-align: center;
+      font-size: 30px;
+      margin: 10px auto 20px auto;
+      max-width: 1000px;
+    }
+
+    .project-links {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .project-links a {
+      color: white;
+      font-size: 22px;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    .project-links a:hover {
+      color: #ff007f;
+    }
+
+    .project-box {
+      width: 300px;
+      height: 300px;
+      border: 2px solid #333;
+      margin: 50px auto 0 auto;
+      background-color: black;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-box:hover {
+      transform: scale(1.03);
+      border-color: #ff007f;
+      box-shadow: 0 0 5px #ff007f,
+                  0 0 20px #ff007f,
+                  0 0 40px #ff007f;
+    }
+
+    .project-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-caption {
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 80px;
+    }
+
+    .rating-section {
+      background-color: black;
+      text-align: center;
+      padding: 25px;
+      margin-top: 20px;
+    }
+
+    .rating-section p {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .rating {
+      display: inline-block;
+    }
+
+    .rating:not(:checked) > input {
+      position: absolute;
+      appearance: none;
+    }
+
+    .rating:not(:checked) > label {
+      float: right;
+      cursor: pointer;
+      font-size: 40px;
+      color: #666;
+      margin: 0 3px;
+    }
+
+    .rating:not(:checked) > label:before {
+      content: '★';
+    }
+
+    .rating > input:checked + label:hover,
+    .rating > input:checked + label:hover ~ label,
+    .rating > input:checked ~ label:hover,
+    .rating > input:checked ~ label:hover ~ label,
+    .rating > label:hover ~ input:checked ~ label {
+      color: #e58e09;
+    }
+
+    .rating:not(:checked) > label:hover,
+    .rating:not(:checked) > label:hover ~ label {
+      color: #ff9e0b;
+    }
+
+    .rating > input:checked ~ label {
+      color: #ffa723;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="index.html">Arnav's Webpage</a>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="bio.html">Bio</a>
+        </li>
+
+        <li class="active">
+          <a href="projects.html">Projects</a>
+        </li>
+
+        <li>
+          <a href="game.html">Game</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<h1>My Projects</h1>
+
+<p class="project-intro">
+  Hey! Here are some future projects that I will be working on. Check back later to see what I make.
+</p>
+
+<div class="project-links">
+  <a href="#project1">Project 1</a>
+  <a href="#project2">Project 2</a>
+  <a href="#project3">Project 3</a>
+  <a href="#project4">Project 4</a>
+  <a href="#project5">Project 5</a>
+</div>
+
+<div class="container">
+
+  <div id="project1" class="project-box">
+    <img src="https://codehs.com/uploads/40956ea1eeb2a20f9dd7c73d524c31f6" alt="Coming Soon">
+  </div>
+
+  <p class="project-caption">
+    <strong>Project 1:</strong><br>
+    <br>
+    DESCRIPTION GOES HERE
+  </p>
+
+  <div id="project2" class="project-box">
+    <img src="https://codehs.com/uploads/40956ea1eeb2a20f9dd7c73d524c31f6" alt="Coming Soon">
+  </div>
+
+  <p class="project-caption">
+    <strong>Project 2:</strong><br>
+    <br>
+    DESCRIPTION GOES HERE
+  </p>
+
+  <div id="project3" class="project-box">
+    <img src="https://codehs.com/uploads/40956ea1eeb2a20f9dd7c73d524c31f6" alt="Coming Soon">
+  </div>
+
+  <p class="project-caption">
+    <strong>Project 3:</strong><br>
+    <br>
+    DESCRIPTION GOES HERE
+  </p>
+
+  <div id="project4" class="project-box">
+    <img src="https://codehs.com/uploads/40956ea1eeb2a20f9dd7c73d524c31f6" alt="Coming Soon">
+  </div>
+
+  <p class="project-caption">
+    <strong>Project 4:</strong><br>
+    <br>
+    DESCRIPTION GOES HERE
+  </p>
+
+  <div id="project5" class="project-box">
+    <img src="https://codehs.com/uploads/40956ea1eeb2a20f9dd7c73d524c31f6" alt="Coming Soon">
+  </div>
+
+  <p class="project-caption">
+    <strong>Project 5:</strong><br>
+    <br>
+    DESCRIPTION GOES HERE
+  </p>
+
+</div>
+
+<div class="parallax"></div>
+
+<footer class="bg-dark text-white text-center py-4 mt-5">
+
+  <div class="container">
+
+    <p class="mb-2">
+      Created by <strong>Arnav Chourasia</strong> &copy; 2026
+    </p>
+
+    <p class="mb-2">
+      <a href="https://granadahigh.com/" target="_blank" class="text-white text-decoration-none">
+        Granada High School
+      </a>
+    </p>
+
+    <p class="mb-0">
+      <a href="mailto:arnav.chourasia@gmail.com" class="text-white text-decoration-none">
+        arnav.chourasia@gmail.com
+      </a>
+    </p>
+
+  </div>
+
+  <div class="rating-section">
+
+    <p>What would you rate this website?</p>
+
+    <div class="rating">
+
+      <input type="radio" id="star5" name="rating" value="5">
+      <label for="star5" onclick="thankYou()"></label>
+
+      <input type="radio" id="star4" name="rating" value="4">
+      <label for="star4" onclick="thankYou()"></label>
+
+      <input type="radio" id="star3" name="rating" value="3">
+      <label for="star3" onclick="thankYou()"></label>
+
+      <input type="radio" id="star2" name="rating" value="2">
+      <label for="star2" onclick="thankYou()"></label>
+
+      <input type="radio" id="star1" name="rating" value="1">
+      <label for="star1" onclick="thankYou()"></label>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+function thankYou() {
+  alert("Thanks for your feedback!");
+}
+</script>
+
+<script src="cursor.js"></script>
+
+</body>
+</html>
