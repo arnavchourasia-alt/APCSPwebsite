@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>AP CSP BIO PAGE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="icon" href="https://codehs.com/uploads/dc996631e2b43cbd3057f59597e54802" type="image/x-icon">
+
+  <style>
+
+   
+    .navbar-brand {
+      font-size: 26px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .navbar-brand:hover {
+      color: #ff007f !important;
+      text-shadow: 0 0 5px #ff007f,
+                   0 0 15px #ff007f,
+                   0 0 30px #ff007f;
+    }
+
+    
+    .bio-intro {
+      text-align: center;
+      font-size: 30px;
+      margin: 10px auto 50px auto;
+      max-width: 1000px;
+    }
+
+  
+    .bio-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 70px;
+      gap: 50px;
+    }
+
+    .bio-box {
+      width: 300px;
+      height: 300px;
+      border: 2px solid #333;
+      background-color: #f5f5f5;
+      text-align: center;
+      overflow: hidden;
+      flex-shrink: 0;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .bio-box:hover {
+      transform: scale(1.03);
+      border-color: #ff007f;
+      box-shadow: 0 0 5px #ff007f,
+                  0 0 20px #ff007f,
+                  0 0 40px #ff007f;
+    }
+
+    .bio-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .bio-box a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .bio-caption {
+      text-align: left;
+      max-width: 500px;
+      margin: 0;
+      font-size: 25px;
+    }
+
+  
+    .rating-section {
+      background-color: black;
+      text-align: center;
+      padding: 25px;
+      margin-top: 20px;
+    }
+
+    .rating-section p {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .rating {
+      display: inline-block;
+    }
+
+    .rating:not(:checked) > input {
+      position: absolute;
+      appearance: none;
+    }
+
+    .rating:not(:checked) > label {
+      float: right;
+      cursor: pointer;
+      font-size: 40px;
+      color: #666;
+      margin: 0 3px;
+    }
+
+    .rating:not(:checked) > label:before {
+      content: '★';
+    }
+
+    .rating > input:checked + label:hover,
+    .rating > input:checked + label:hover ~ label,
+    .rating > input:checked ~ label:hover,
+    .rating > input:checked ~ label:hover ~ label,
+    .rating > label:hover ~ input:checked ~ label {
+      color: #e58e09;
+    }
+
+    .rating:not(:checked) > label:hover,
+    .rating:not(:checked) > label:hover ~ label {
+      color: #ff9e0b;
+    }
+
+    .rating > input:checked ~ label {
+      color: #ffa723;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="index.html">Arnav's Webpage</a>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+
+      <ul class="nav navbar-nav">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li class="active">
+          <a href="bio.html">Bio</a>
+        </li>
+
+        <li>
+          <a href="projects.html">Projects</a>
+        </li>
+
+        <li>
+          <a href="game.html">Game</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<h1>Bio page</h1>
+
+<p class="bio-intro">
+  Hi! This is my bio page. Here you can learn more about me, my hobbies, interests, and the things I enjoy doing. I am currently a Junior at Granada High School and I hope to major in a STEM related field in college.
+</p>
+
+<hr>
+
+<div class="container">
+
+  <!-- Image 1 -->
+
+  <div class="bio-item">
+
+    <div class="bio-box">
+      <a href="https://norcalpremier.com/">
+        <img src="https://codehs.com/uploads/85f7ef46193d10567161fb0f90927d1a" alt="Bio Image 1">
+      </a>
+    </div>
+
+    <p class="bio-caption">
+      One thing I enjoy doing is playing soccer. I have been playing soccer since around 6th grade and I have enjoyed it ever since. I play for Livermore Fusion Soccer Club as well as the high school team. On the side, I often referee soccer matches for some big bucks.
+    </p>
+
+  </div>
+
+
+  <!-- Image 2 -->
+
+  <div class="bio-item">
+
+    <div class="bio-box">
+      <a href="https://www.utrsports.net/">
+        <img src="https://codehs.com/uploads/1814123ba4b0095f52069af8917fe75b" alt="Bio Image 2">
+      </a>
+    </div>
+
+    <p class="bio-caption">
+      Another sport I enjoy playing is Tennis. I recently picked up tennis since some of my friends played it and I started this year. I played for the high school team and some tournaments outside of that.
+    </p>
+
+  </div>
+
+
+  <!-- Image 3 -->
+
+  <div class="bio-item">
+
+    <div class="bio-box">
+      <a href="https://www.worldcubeassociation.org/persons/2023CHOU03">
+        <img src="https://codehs.com/uploads/6661c81721fcf6c2545afaef125f6b6b" alt="Bio Image 3">
+      </a>
+    </div>
+
+    <p class="bio-caption">
+      One hobby ive had for a while is solving rubiks cubes (cubing). I started in 7th grade when my friend taught me how to solve one and since then I have been getting better and better. I currently average around 17 seconds on the 3x3 and have been to 5 competitions in total. This year, we have started a cubing club at GHS! If you are interested or want to learn how to solve a rubiks cube, pull up to Mr Cliftons room on Tuesdays (No experience needed!).
+    </p>
+
+  </div>
+
+
+  <!-- Image 4 -->
+
+  <div class="bio-item">
+
+    <div class="bio-box">
+      <a href="https://www.lego.com/en-us">
+        <img src="https://codehs.com/uploads/910352210c06e3ce2a728cc2e86768be" alt="Bio Image 4">
+      </a>
+    </div>
+
+    <p class="bio-caption">
+      In my free time, I like making stuff out of legos, mainly robots or functional things. I enjoy designing things and I believe lego is a pretty good way to pass free time.
+    </p>
+
+  </div>
+
+
+  <!-- Image 5 trhig -->
+
+  <div class="bio-item">
+
+    <div class="bio-box">
+      <a href="https://www.onlinepianist.com/virtual-piano">
+        <img src="https://codehs.com/uploads/0bcff3cca346ffa864598e6f0d4745f1" alt="Bio Image 5">
+      </a>
+    </div>
+
+    <p class="bio-caption">
+      Lastly, I picked up piano recently. I am pretty trash right now but I have been improving everyday.
+    </p>
+
+  </div>
+
+</div>
+
+<div class="parallax"></div>
+
+
+<footer class="bg-dark text-white text-center py-4 mt-5">
+
+  <div class="container">
+
+    <p class="mb-2">
+      Created by <strong>Arnav Chourasia</strong> &copy; 2026
+    </p>
+
+    <p class="mb-2">
+      <a href="https://granadahigh.com/"
+         target="_blank"
+         class="text-white text-decoration-none">
+        Granada High School
+      </a>
+    </p>
+
+    <p class="mb-0">
+      <a href="mailto:arnav.chourasia@gmail.com"
+         class="text-white text-decoration-none">
+        arnav.chourasia@gmail.com
+      </a>
+    </p>
+
+  </div>
+
+  <!-- Website rating ui verse element -->
+
+  <div class="rating-section">
+
+    <p>What would you rate this website?</p>
+
+    <div class="rating">
+
+      <input type="radio" id="star5" name="rating" value="5">
+      <label for="star5" onclick="thankYou()"></label>
+
+      <input type="radio" id="star4" name="rating" value="4">
+      <label for="star4" onclick="thankYou()"></label>
+
+      <input type="radio" id="star3" name="rating" value="3">
+      <label for="star3" onclick="thankYou()"></label>
+
+      <input type="radio" id="star2" name="rating" value="2">
+      <label for="star2" onclick="thankYou()"></label>
+
+      <input type="radio" id="star1" name="rating" value="1">
+      <label for="star1" onclick="thankYou()"></label>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+function thankYou() {
+  alert("Thanks for your feedback!");
+}
+
+</script>
+
+<script src="cursor.js"></script>
+
+</body>
+</html>
