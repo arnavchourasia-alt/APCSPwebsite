@@ -1,306 +1,250 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>AP CSP PROJECT PAGE</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
 
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="https://codehs.com/uploads/dc996631e2b43cbd3057f59597e54802" type="image/x-icon">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-  <style>
-    .navbar-brand {
-      font-size: 26px;
-      padding-top: 15px;
-      padding-bottom: 15px;
-      font-weight: bold;
-    }
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="cursor.js"></script>
 
-    .navbar-brand:hover {
-      color: #ff007f !important;
-      text-shadow: 0 0 5px #ff007f,
-                   0 0 15px #ff007f,
-                   0 0 30px #ff007f;
-    }
+    <style>
+        body {
+            margin: 0;
+        }
 
-    html {
-      scroll-behavior: smooth;
-    }
+        .projects-container {
+            width: 100%;
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 30px 25px;
+        }
 
-    .project-intro {
-      text-align: center;
-      font-size: 30px;
-      margin: 10px auto 20px auto;
-      max-width: 1000px;
-    }
+        .projects-title {
+            text-align: center;
+            margin: 35px 0;
+        }
 
-    .project-links {
-      text-align: center;
-      margin: 20px 0;
-    }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 45px;
+            justify-items: center;
+        }
 
-    .project-links a {
-      color: white;
-      font-size: 22px;
-      margin: 0 15px;
-      text-decoration: none;
-    }
+        .project {
+            width: 100%;
+            max-width: 650px;
+            text-align: center;
+        }
 
-    .project-links a:hover {
-      color: #ff007f;
-    }
+        .project-box {
+            width: 100%;
+            height: 450px;
+            border: 3px solid #333;
+            border-radius: 12px;
+            margin: 0 auto;
+            background-color: black;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .project-box {
-      width: 300px;
-      height: 300px;
-      border: 2px solid #333;
-      margin: 50px auto 0 auto;
-      background-color: black;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+        .project-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
 
-    .project-box:hover {
-      transform: scale(1.03);
-      border-color: #ff007f;
-      box-shadow: 0 0 5px #ff007f,
-                  0 0 20px #ff007f,
-                  0 0 40px #ff007f;
-    }
+        .project-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
-    .project-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+        .project-box iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border: none;
+        }
 
-    .project-caption {
-      text-align: center;
-      margin-top: 10px;
-      margin-bottom: 80px;
-    }
+        .project-caption {
+            font-size: 18px;
+            margin: 18px auto 30px;
+            line-height: 1.6;
+        }
 
-    .rating-section {
-      background-color: black;
-      text-align: center;
-      padding: 25px;
-      margin-top: 20px;
-    }
+        @media (max-width: 900px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
 
-    .rating-section p {
-      font-size: 25px;
-      margin-bottom: 15px;
-    }
+            .project {
+                max-width: 700px;
+            }
 
-    .rating {
-      display: inline-block;
-    }
+            .project-box {
+                height: 420px;
+            }
+        }
 
-    .rating:not(:checked) > input {
-      position: absolute;
-      appearance: none;
-    }
+        @media (max-width: 500px) {
+            .projects-container {
+                padding: 15px;
+            }
 
-    .rating:not(:checked) > label {
-      float: right;
-      cursor: pointer;
-      font-size: 40px;
-      color: #666;
-      margin: 0 3px;
-    }
+            .project-box {
+                height: 350px;
+            }
 
-    .rating:not(:checked) > label:before {
-      content: '★';
-    }
-
-    .rating > input:checked + label:hover,
-    .rating > input:checked + label:hover ~ label,
-    .rating > input:checked ~ label:hover,
-    .rating > input:checked ~ label:hover ~ label,
-    .rating > label:hover ~ input:checked ~ label {
-      color: #e58e09;
-    }
-
-    .rating:not(:checked) > label:hover,
-    .rating:not(:checked) > label:hover ~ label {
-      color: #ff9e0b;
-    }
-
-    .rating > input:checked ~ label {
-      color: #ffa723;
-    }
-  </style>
+            .project-caption {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
 
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+            <div class="navbar-header">
+                <button type="button"
+                        class="navbar-toggle collapsed"
+                        data-toggle="collapse"
+                        data-target="#mainNavbar"
+                        aria-expanded="false">
 
-      <a class="navbar-brand" href="index.html">Arnav's Webpage</a>
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-    </div>
+                <a class="navbar-brand" href="index.html">Home</a>
+            </div>
 
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="index.html">Home</a>
-        </li>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="bio.html">About Me</a></li>
+                    <li class="active"><a href="projects.html">Projects</a></li>
+                    <li><a href="game.html">Game</a></li>
+                </ul>
+            </div>
 
-        <li>
-          <a href="bio.html">Bio</a>
-        </li>
+        </div>
+    </nav>
 
-        <li class="active">
-          <a href="projects.html">Projects</a>
-        </li>
 
-        <li>
-          <a href="game.html">Game</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-- Projects -->
+    <main class="projects-container">
 
-<h1>My Projects</h1>
+        <h1 class="projects-title">My Projects</h1>
 
-<p class="project-intro">
-  Hey! Here are some future projects that I will be working on. Check back later to see what I make.
-</p>
+        <div class="projects-grid">
 
-<div class="project-links">
-  <a href="#project1">Project 1</a>
-  <a href="#project2">Project 2</a>
-  <a href="#project3">Project 3</a>
-  <a href="#project4">Project 4</a>
-  <a href="#project5">Project 5</a>
-</div>
+            <!-- Project 1: Python Game -->
+            <section class="project">
 
-<div class="container">
+                <div id="project1" class="project-box">
 
-  <div id="project1" class="project-box">
-    <img src="https://codehs.com/uploads/40956ea1eeb2a20f9dd7c73d524c31f6" alt="Coming Soon">
-  </div>
+                    <!-- Replace the URL below with your CodeHS EMBED URL -->
+                    <iframe
+                        src="https://pythonexecutor.com/playground/"
+                        title="Bay Area Layover Python Game"
+                        allowfullscreen>
+                    </iframe>
 
-  <p class="project-caption">
-    <strong>Project 1:</strong><br>
-    <br>
-    DESCRIPTION GOES HERE
-  </p>
+                </div>
 
-  <div id="project2" class="project-box">
-    <img src="https://codehs.com/uploads/40956ea1eeb2a20f9dd7c73d524c31f6" alt="Coming Soon">
-  </div>
+                <p class="project-caption">
+                    <strong>Project 1: Bay Area Layover</strong><br>
+                    An interactive Python text adventure set in the Bay Area.
+                </p>
 
-  <p class="project-caption">
-    <strong>Project 2:</strong><br>
-    <br>
-    DESCRIPTION GOES HERE
-  </p>
+            </section>
 
-  <div id="project3" class="project-box">
-    <img src="https://codehs.com/uploads/40956ea1eeb2a20f9dd7c73d524c31f6" alt="Coming Soon">
-  </div>
 
-  <p class="project-caption">
-    <strong>Project 3:</strong><br>
-    <br>
-    DESCRIPTION GOES HERE
-  </p>
+            <!-- Project 2 -->
+            <section class="project">
 
-  <div id="project4" class="project-box">
-    <img src="https://codehs.com/uploads/40956ea1eeb2a20f9dd7c73d524c31f6" alt="Coming Soon">
-  </div>
+                <div id="project2" class="project-box">
+                    <img
+                        src="https://codehs.com/uploads/40956ea1eeb2a20f9dd7c73d524c31f6"
+                        alt="Project 2 preview">
+                </div>
 
-  <p class="project-caption">
-    <strong>Project 4:</strong><br>
-    <br>
-    DESCRIPTION GOES HERE
-  </p>
+                <p class="project-caption">
+                    <strong>Project 2:</strong><br>
+                    DESCRIPTION GOES HERE
+                </p>
 
-  <div id="project5" class="project-box">
-    <img src="https://codehs.com/uploads/40956ea1eeb2a20f9dd7c73d524c31f6" alt="Coming Soon">
-  </div>
+            </section>
 
-  <p class="project-caption">
-    <strong>Project 5:</strong><br>
-    <br>
-    DESCRIPTION GOES HERE
-  </p>
 
-</div>
+            <!-- Project 3 -->
+            <section class="project">
 
-<div class="parallax"></div>
+                <div id="project3" class="project-box">
+                    <img
+                        src="https://codehs.com/uploads/40956ea1eeb2a20f9dd7c73d524c31f6"
+                        alt="Project 3 preview">
+                </div>
 
-<footer class="bg-dark text-white text-center py-4 mt-5">
+                <p class="project-caption">
+                    <strong>Project 3:</strong><br>
+                    DESCRIPTION GOES HERE
+                </p>
 
-  <div class="container">
+            </section>
 
-    <p class="mb-2">
-      Created by <strong>Arnav Chourasia</strong> &copy; 2026
-    </p>
 
-    <p class="mb-2">
-      <a href="https://granadahigh.com/" target="_blank" class="text-white text-decoration-none">
-        Granada High School
-      </a>
-    </p>
+            <!-- Project 4 -->
+            <section class="project">
 
-    <p class="mb-0">
-      <a href="mailto:arnav.chourasia@gmail.com" class="text-white text-decoration-none">
-        arnav.chourasia@gmail.com
-      </a>
-    </p>
+                <div id="project4" class="project-box">
+                    <img
+                        src="https://codehs.com/uploads/40956ea1eeb2a20f9dd7c73d524c31f6"
+                        alt="Project 4 preview">
+                </div>
 
-  </div>
+                <p class="project-caption">
+                    <strong>Project 4:</strong><br>
+                    DESCRIPTION GOES HERE
+                </p>
 
-  <div class="rating-section">
+            </section>
 
-    <p>What would you rate this website?</p>
 
-    <div class="rating">
+            <!-- Project 5 -->
+            <section class="project">
 
-      <input type="radio" id="star5" name="rating" value="5">
-      <label for="star5" onclick="thankYou()"></label>
+                <div id="project5" class="project-box">
+                    <img
+                        src="https://codehs.com/uploads/40956ea1eeb2a20f9dd7c73d524c31f6"
+                        alt="Project 5 preview">
+                </div>
 
-      <input type="radio" id="star4" name="rating" value="4">
-      <label for="star4" onclick="thankYou()"></label>
+                <p class="project-caption">
+                    <strong>Project 5:</strong><br>
+                    DESCRIPTION GOES HERE
+                </p>
 
-      <input type="radio" id="star3" name="rating" value="3">
-      <label for="star3" onclick="thankYou()"></label>
+            </section>
 
-      <input type="radio" id="star2" name="rating" value="2">
-      <label for="star2" onclick="thankYou()"></label>
+        </div>
 
-      <input type="radio" id="star1" name="rating" value="1">
-      <label for="star1" onclick="thankYou()"></label>
-
-    </div>
-
-  </div>
-
-</footer>
-
-<script>
-function thankYou() {
-  alert("Thanks for your feedback!");
-}
-</script>
-
-<script src="cursor.js"></script>
+    </main>
 
 </body>
 </html>
