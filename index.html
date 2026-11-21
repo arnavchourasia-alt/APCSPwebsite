@@ -1,32 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>AP CSP WEBSITE</title>
+  <title>AP CSP PROJECT PAGE</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="https://codehs.com/uploads/dc996631e2b43cbd3057f59597e54802" type="image/x-icon">
 
   <style>
     .navbar-brand {
       font-size: 26px;
-      padding: 15px;
+      padding-top: 15px;
+      padding-bottom: 15px;
       font-weight: bold;
     }
 
-    .intro {
+    .navbar-brand:hover {
+      color: #ff007f !important;
+      text-shadow: 0 0 5px #ff007f,
+                   0 0 15px #ff007f,
+                   0 0 30px #ff007f;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .project-intro {
       text-align: center;
-      font-size: 32px;
-      margin: 30px auto;
+      font-size: 30px;
+      margin: 10px auto 20px auto;
       max-width: 1000px;
+    }
+
+    .project-links {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .project-links a {
+      color: white;
+      font-size: 22px;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    .project-links a:hover {
+      color: #ff007f;
+    }
+
+    .project-box {
+      width: 100%;
+      max-width: 850px;
+      height: 550px;
+      border: 2px solid #333;
+      border-radius: 8px;
+      margin: 35px auto 0 auto;
+      background-color: black;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .project-box:hover {
+      border-color: #ff007f;
+      box-shadow: 0 0 5px #ff007f,
+                  0 0 20px #ff007f,
+                  0 0 40px #ff007f;
+    }
+
+    .project-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-box iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .project-caption {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 15px;
+      margin-bottom: 80px;
     }
 
     .rating-section {
       background-color: black;
+      color: white;
       text-align: center;
       padding: 25px;
       margin-top: 20px;
@@ -74,6 +143,23 @@
     .rating > input:checked ~ label {
       color: #ffa723;
     }
+
+    @media (max-width: 600px) {
+      .project-intro {
+        font-size: 22px;
+        padding: 0 15px;
+      }
+
+      .project-links a {
+        display: inline-block;
+        font-size: 18px;
+        margin: 5px 8px;
+      }
+
+      .project-box {
+        height: 450px;
+      }
+    }
   </style>
 </head>
 
@@ -82,56 +168,128 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
+
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+
       <a class="navbar-brand" href="index.html">Arnav's Webpage</a>
+
     </div>
 
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="bio.html">Bio</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li class="active"><a href="projects.html">Projects</a></li>
         <li><a href="game.html">Game</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<h1>Welcome to my Webpage</h1>
+<h1>My Projects</h1>
 
-<p class="intro">
-  Hi! My name is Arnav Chourasia and this is my website. Here you can find some of my future projects, hobbies/interests, as well as a reaction time game that you can play!
+<p class="project-intro">
+  Hey! Here are some projects I have been working on. Check them out below!
 </p>
 
-<hr>
+<div class="project-links">
+  <a href="#project1">Project 1</a>
+  <a href="#project2">Project 2</a>
+  <a href="#project3">Project 3</a>
+  <a href="#project4">Project 4</a>
+  <a href="#project5">Project 5</a>
+</div>
 
-<div class="parallax"></div>
+<div class="container">
 
-<div class="container"></div>
+  <!-- PROJECT 1: BAY AREA LAYOVER -->
+  <div id="project1" class="project-box">
+    <iframe
+      src="https://pytogether.org/embed/eyJwaWQiOjI1MDcwLCJ0eXBlIjoic25pcHBldCJ9:1xLD06:UBiNuiskLf8r4vwEmVbEAc7KCiwP-qT0zsWprXtJIyI"
+      title="Bay Area Layover Python Game"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <p class="project-caption">
+    <strong>Project 1: Bay Area Layover</strong><br><br>
+    An interactive Python text adventure where your choices determine
+    what happens during your Bay Area adventure.
+  </p>
+
+  <!-- PROJECT 2: ARNAVCIPHER -->
+  <div id="project2" class="project-box">
+    <iframe
+      src="https://pytogether.org/snippet/eyJwaWQiOjI4Mzg0LCJ0eXBlIjoic25pcHBldCJ9:1xUe8X:l-lHfO6Vn17nktnMeDnRfUfuWIhDDqidnKG8TQhkKF4"
+      title="cipher Python Program"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <p class="project-caption">
+    <strong>Project 2: Arnavcipher</strong><br><br>
+    A Python cipher program that encrypts and decrypts messages using
+    Caesar, Atbash, and Arnavcipher.
+  </p>
+
+  <!-- PROJECT 3 -->
+  <div id="project3" class="project-box">
+    <img src="https://codehs.com/uploads/40956ea1eeb2a20f9dd7c73d524c31f6" alt="Coming Soon">
+  </div>
+
+  <p class="project-caption">
+    <strong>Project 3</strong><br><br>
+    Coming soon!
+  </p>
+
+  <!-- PROJECT 4 -->
+  <div id="project4" class="project-box">
+    <img src="https://codehs.com/uploads/40956ea1eeb2a20f9dd7c73d524c31f6" alt="Coming Soon">
+  </div>
+
+  <p class="project-caption">
+    <strong>Project 4</strong><br><br>
+    Coming soon!
+  </p>
+
+  <!-- PROJECT 5 -->
+  <div id="project5" class="project-box">
+    <img src="https://codehs.com/uploads/40956ea1eeb2a20f9dd7c73d524c31f6" alt="Coming Soon">
+  </div>
+
+  <p class="project-caption">
+    <strong>Project 5</strong><br><br>
+    Coming soon!
+  </p>
+
+</div>
 
 <div class="parallax"></div>
 
 <footer class="bg-dark text-white text-center py-4 mt-5">
+
   <div class="container">
-    <p class="mb-2">Created by <strong>Arnav Chourasia</strong> &copy; 2026</p>
+
+    <p class="mb-2">
+      Created by <strong>Arnav Chourasia</strong> &copy; 2026
+    </p>
 
     <p class="mb-2">
       <a href="https://granadahigh.com/" target="_blank" class="text-white text-decoration-none">
-        <i class="bi bi-mortarboard-fill"></i>
         Granada High School
       </a>
     </p>
 
     <p class="mb-0">
-      <a href="mailto:YOUR-EMAIL-HERE" class="text-white text-decoration-none">
-        <i class="bi bi-envelope-fill"></i>
-        Contact Me
+      <a href="mailto:arnav.chourasia@gmail.com" class="text-white text-decoration-none">
+        arnav.chourasia@gmail.com
       </a>
     </p>
+
   </div>
 
   <div class="rating-section">
@@ -154,11 +312,12 @@
       <label for="star1" onclick="thankYou()"></label>
     </div>
   </div>
+
 </footer>
 
 <script>
 function thankYou() {
-  alert("Thank for your feedback!");
+  alert("Thanks for your feedback!");
 }
 </script>
 
